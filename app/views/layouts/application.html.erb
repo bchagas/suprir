@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SuprirVarejo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= t(:site_title) %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+    <header>
+      <%= image_tag "logo.png", alt: t(:site_name) %>
+      <button type="button">Log in</button>
+    </header>
 
-</body>
+  <%= yield %>
+
+  </body>
 </html>
