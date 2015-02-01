@@ -7,13 +7,24 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %>">
     <header>
-      <%= image_tag "logo.png", alt: t(:site_name) %>
-      <button type="button">Log in</button>
+      <div class="content">
+        <%= image_tag "logo.png", alt: t(:site_name) %>
+        <button type="button">Log in</button>
+      </div>
     </header>
 
-  <%= yield %>
+    <%= yield %>
 
+    <footer>
+      <div class="content">
+        <p>Suprir Varejo <%= Time.now.strftime("%Y") %></p>
+        <ul class="social-networks">
+          <li class="facebook"><%= fa_icon "facebook-square" %></li>
+          <li class="twitter"><%= fa_icon "twitter-square" %></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
