@@ -1,0 +1,41 @@
+%base
+  border-radius: 5px
+  cursor: pointer
+  font:
+    family: $istok
+    weight: 400
+  padding: 6px 20px
+  text:
+    align: center
+    transform: uppercase
+  +transition(all .2s ease-in-out)
+  outline: none
+
+=white-button
+  background: white
+  border: 1px solid $gray-border
+  color: $text-gray
+  @extend %base
+
+  &:hover
+    background-color: darken(white, 20%)
+    color: lighten(white, 20%)
+
+  &:active
+    background-color: darken(white, 30%)
+    color: lighten(white, 30%)
+
+=green-button
+  background: $green
+  border: 1px solid $green-border
+  color: white
+
+  @extend %base
+
+  &:hover
+    background-color: darken($green, 20%)
+    color: lighten(white, 20%)
+
+  &:active
+    background-color: darken($green, 30%)
+    color: lighten(white, 30%)

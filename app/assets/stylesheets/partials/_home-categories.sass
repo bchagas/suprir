@@ -1,0 +1,78 @@
+.categories
+  background: url("computer.png") no-repeat center center
+  display: block
+  float: left
+  padding: 52px 110px 0
+  +size(560px 336px)
+
+  li
+    display: block
+    float: left
+    margin-bottom: 20px
+    margin-right: 20px
+    +size(100px 100px)
+
+  .equipamentos-pesados,
+  .engenharia-arquitetura
+    margin-right: 0
+
+  p
+    color: white
+    font:
+      family: $istok
+      size: em(12)
+      weight: bold
+    line-height: em(19)
+    height: 100px
+    margin-top: 62px
+    text:
+      align: center
+      transform: uppercase
+
+    > sup
+      text-transform: none
+
+  .servico-tecnico-especializado p
+    font-size: em(11)
+.despesas-operacionais-produtos,
+.despesas-operacionais-pequenos-servicos
+  background-image: image-url("letters/d.png")
+  background-repeat: no-repeat
+  background-position: bottom right
+
+.equipamentos-leves,
+.equipamentos-pesados,
+.engenharia-arquitetura
+  background: image-url("letters/e.png")
+
+.servico-tecnico-especializado
+  background: image-url("letters/s.png")
+
+// Don't repeat backgrounds
+.despesas-operacionais-produtos,
+.despesas-operacionais-pequenos-servicos,
+.equipamentos-leves,
+.equipamentos-pesados,
+.engenharia-arquitetura,
+.servico-tecnico-especializado
+  background-repeat: no-repeat
+  background-position: bottom right
+
+// Background colors
+.despesas-operacionais-produtos
+  background-color: $blue
+
+.despesas-operacionais-pequenos-servicos
+  background-color: $green
+
+.equipamentos-leves
+  background-color: $yellow
+
+.equipamentos-pesados
+  background-color: $orange
+
+.engenharia-arquitetura
+  background-color: $gray
+
+.servico-tecnico-especializado
+  background-color: $purple

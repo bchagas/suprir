@@ -2,3 +2,17 @@ pt-BR:
   site_title: "SuprirVarejo"
   site_name: "Suprir Varejo"
   login: "Log in"
+
+  home:
+    banner:
+      title: "SuprirVarejo.com"
+      subtitle_html: "O ponto de encontro de compradores <br> e fornecedores de Suprimentos na WEB"
+
+  register:
+    placeholder:
+      first_name: "Nome"
+      last_name: "Sobrenome"
+      email: "Seu email"
+
+    action:
+      submit: "Cadastre-se gátis"

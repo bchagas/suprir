@@ -1,0 +1,30 @@
+<section role="banner">
+  <div class="content">
+    <h1><%= t(:title, scope: [:home, :banner]) %></h1>
+    <h2><%= t(:subtitle_html, scope: [:home, :banner]) %></h1>
+
+    <ul class="categories">
+      <ul>
+        <li class="despesas-operacionais-produtos"><p>Despesas Operacionais <sup>(produtos)</sup></p></li>
+        <li class="equipamentos-leves"><p>Equipamentos Leves</p></li>
+        <li class="equipamentos-pesados"><p>Equipamentos Pesados</p></li>
+        <li class="despesas-operacionais-pequenos-servicos"><p>Despesas Operacionais <sup>(pequenos serviços)</sup></p></li>
+        <li class="servico-tecnico-especializado"><p>Serviço Tecnico /Especializado</p></li>
+        <li class="engenharia-arquitetura"><p>Engenharia /Arquitetura</p></li>
+      </ul>
+    </ul>
+
+    <%= semantic_form_for :register do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :type, as: :radio, collection: ["Sou comprador", "Sou fornecedor"], label: false %>
+        <%= f.input :first_name, label: false, placeholder: t(:first_name, scope: [:register, :placeholder]) %>
+        <%= f.input :last_name, label: false, placeholder: t(:last_name, scope: [:register, :placeholder]) %>
+        <%= f.input :email, as: :email, label: false, placeholder: t(:email, scope: [:register, :placeholder]) %>
+      <% end %>
+
+      <%= f.actions do %>
+        <%= f.action :submit, :as => :button, label: t(:submit, scope: [:register, :action]) %>
+      <% end %>
+    <% end %>
+  </div>
+</section>
