@@ -5,19 +5,50 @@
 @import partials/home-categories
 
 body
+  &:before
+    :before
+      content: ""
+      height: 100%
+      float: left
+      width: 0
+      margin-top: -32767px
+      /* ^ thank you Erik J - negate effect of float
+
   > header
     margin:
       top: 20px
       bottom: 30px
 
-    button
+    .logo
+      display: inline-block
+
+    .sign-in
       +white-button
       float: right
       margin-top: 25px
-      font-size: em(14)
+      font-size: rem(14)
 
   .content
     +outer-container
+
+  footer
+    background: white
+    clear: both
+    color: $text-gray
+    height: 60px
+    font-size: rem(16)
+    padding: 25px 0
+
+    p
+      float: left
+
+  .social-networks
+    text-align: left
+    float: right
+
+    li
+      display: inline
+
 
   &.home
     background: url("dot.png") repeat left top
@@ -46,23 +77,6 @@ body
     list-style: none
     margin: 0
     padding: 0
-
-  button
-    font-size: em(24)
-    width: 100%
-
-  input
-    &[type='email'],
-    &[type='text'],
-    &[type='password']
-      border-radius: 5px
-      border: 1px solid $gray-border
-      font-size: 16px
-      padding: 10px 8px
-      +placeholder-color(lighten($text-gray, 10%))
-
-  li
-    margin-bottom: 15px
 
   .choices-group .choice
     float: left

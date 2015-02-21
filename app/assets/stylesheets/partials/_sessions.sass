@@ -1,0 +1,50 @@
+.sessions,
+.registrations,
+.passwords
+  > .content
+    +span-columns(4)
+    float: none
+    margin: 0 auto
+
+  header
+    text-align: center
+
+#new_user
+  background: $dirty-white
+  border: 1px solid $gray-border
+  border-radius: 10px
+  padding: 30px
+
+  legend
+    line-height: rem(18)
+    padding-bottom: 32px
+
+    > span
+      color: $text-gray
+      font-size: rem(24)
+      text-transform: uppercase
+
+    small
+      clear: both
+      display: block
+      color: $light-gray
+      font-size: rem(16)
+      text-transform: none
+
+.user-actions
+  margin-top: 10px
+  text-align: center
+
+  a
+    color: $text-gray
+    text-decoration: none
+
+    &:hover
+      color: lighten($text-gray, 20%)
+
+  li
+    display: inline-block
+    padding-left: 10px
+
+    &:first-child
+      padding-left: 0
