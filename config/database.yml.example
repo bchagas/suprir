@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: suprir-varejo
-  username: postgres
-  password: postgres
+  username: username
+  password: password
   host: localhost
   pool: 5
