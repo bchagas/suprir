@@ -9,21 +9,13 @@
   </head>
 
   <body class="<%= controller_name %>">
-    <header>
-      <div class="content">
-        <%= image_tag "logo.png", alt: t(:site_name) %>
-        <button type="button">Log in</button>
-      </div>
-    </header>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "shared/header" %>
 
     <%= yield %>
 
     <footer>
       <div class="content">
-        <p>Suprir Varejo <%= Time.now.strftime("%Y") %></p>
+        <p>&copy; Suprir Varejo <%= Time.now.strftime("%Y") %></p>
         <ul class="social-networks">
           <li class="facebook"><%= fa_icon "facebook-square" %></li>
           <li class="twitter"><%= fa_icon "twitter-square" %></li>
