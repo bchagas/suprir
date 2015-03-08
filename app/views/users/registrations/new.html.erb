@@ -1,14 +1,12 @@
 <section class="content user-registration">
   <%= semantic_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-
     <%= f.inputs "Sign Up <small>Crie sua conta</small>" do %>
       <%= f.input :email, label: false, placeholder: "Seu email", as: :email, autofocus: true %>
       <%= f.input :password, label: false, placeholder: "Sua senha #{@minimum_password_length ? "/ mínimo de #{@minimum_password_length} caracteres" : "" }", as: :password, autocomplete: "off" %>
       <%= f.input :password_confirmation, label: false, placeholder: "Confirme sua senha", as: :password, autocomplete: "off" %>
       <%= f.input :first_name, label: false, placeholder: "Primeiro nome", autocomplete: "off" %>
       <%= f.input :last_name, label: false, placeholder: "Último nome", autocomplete: "off" %>
-      <%= f.input :phone_number, label: false, placeholder: "Seu telefone", autocomplete: "off" %>
+      <%= f.input :phone_number, label: false, placeholder: "Seu telefone", data: { mask: "0000?0-0000" }, autocomplete: "off" %>
     <% end %>
 
     <%= f.actions do %>
@@ -18,3 +16,7 @@
 
   <%= render "users/shared/links" %>
 </section>
+
+<% content_for :javascripts do %>
+  SuprirVarejo.maskedInputs()
+<% end %>

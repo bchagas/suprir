@@ -1,1 +1,9 @@
-<p>Olá <%= current_user.first_name %></p>
+<div class="user-navigation">
+  <p><%= t(:welcome, scope: [:user, :navigation], user: current_user.first_name) %></p>
+
+  <button data-type="drop" data-content="ul"><%= fa_icon "caret-down" %></button>
+  <ul>
+    <li><%= link_to t(:account, scope: [:user, :navigation]), edit_user_registration_path %></li>
+    <li><%= link_to t(:products, scope: [:user, :navigation]), "" %></li>
+  </ul>
+</div>

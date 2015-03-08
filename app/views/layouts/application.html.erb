@@ -4,11 +4,19 @@
     <title><%= t(:site_title) %></title>
     <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body class="<%= controller_name %>">
+    <% if notice || alert %>
+      <div class="messages">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <button data-type="close" data-parent=".messages"><%= fa_icon "close" %></button>
+      </div>
+    <% end %>
+
     <%= render "shared/header" %>
 
     <%= yield %>
@@ -22,5 +30,14 @@
         </ul>
       </div>
     </footer>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+
+    <script>
+      SuprirVarejo.messages();
+      SuprirVarejo.dropdown();
+      <%= yield :javascripts %>
+    </script>
   </body>
 </html>
