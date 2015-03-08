@@ -1,16 +1,40 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
+//= require jquery-mask
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require underscore
+
+var SuprirVarejo = SuprirVarejo || {};
+
+;(function(){
+  SuprirVarejo.messages = function() {
+    var closeButton = $("[data-type='close']"),
+        item = closeButton.data("parent");
+
+    $("body").on("click", closeButton, function(){
+      closeButton.parent(item).remove();
+    });
+  };
+
+  SuprirVarejo.maskedInputs = function() {
+    var phoneInput = $("input[type='tel']");
+
+    _.map(phoneInput, function(input) {
+      $(input).mask("(99) 9999-9999?9");
+    });
+  };
+
+  SuprirVarejo.dropdown = function() {
+    var buttons = $("[data-type='drop']");
+
+    _.map(buttons, function(button) {
+      item = $(button).data("content");
+
+      $(".user-navigation").on("click", button, function(event){
+        $(button).next(item).toggle();
+        $(button).toggleClass("open");
+      });
+
+    });
+  };
+})();
