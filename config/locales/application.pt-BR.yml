@@ -3,6 +3,12 @@ pt-BR:
   site_name: "SuprirVarejo"
   login: "Log in"
 
+  user:
+    navigation:
+      welcome: "Olá %{user}"
+      account: "Minha conta"
+      products: "Meus produtos"
+
   home:
     banner:
       title: "SuprirVarejo.com"

@@ -1,0 +1,10 @@
+pt-BR:
+  devise:
+    failure:
+      user:
+        invalid: "Email ou senha inválidos"
+        not_found_in_database: "Email não cadastrado"
+
+    registrations:
+      user:
+        signed_up: "Cadastro efetuado com sucesso"
